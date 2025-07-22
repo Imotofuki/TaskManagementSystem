@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div th:each="task : ${tasks}">
+
+        <p th:text="${task.id}"></p>
+        <p th:text="${task.expiration_date}"></p>
+        <p th:text="${task.task_item}"></p>
+        <p th:text="${task.is_completed}"></p>
+        <p th:text="${task.is_deleted}"></p>
+        <p th:text="${task.create_date_time}"></p>
+        <p th:text="${task.update_date_time}"></p>
+    </div>
+</body>
+</html>
