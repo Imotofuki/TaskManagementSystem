@@ -1,0 +1,87 @@
+body{
+    font-family: 'BIZ UDPゴシック';
+    text-align: center;
+    background-color: whitesmoke;
+}
+.contents {
+    background-color: #ffffff;
+    width: fit-content;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+h1 {
+    margin-bottom: 50px;
+    font-size: 50px;
+    text-decoration: underline;
+}
+table {
+    margin: 0 auto;
+}
+.addform {
+   margin-bottom: 30px;
+}
+input[type="date"] {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+}
+input[type="text"] {
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+}
+input[type="submit"] {
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+}
+input[type="radio"] {
+    /* display: none; */
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    transition: all 0.2s;
+}
+input[type="radio"]:hover{
+    background-color: #9e86f7;
+}
+input[type="radio"]:active {
+    background: #c2c2c2;
+    scale: 1.5;
+}
+input[type="radio"]:checked {
+    background-color: #6e53ce;
+    border-color: #8b1ca1;
+}
+.line {
+    text-decoration: line-through;
+}
+td{
+    padding: 10px;
+    font-size: 20px;
+}
+input[type="submit"] {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #6e53ce;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+input[type="submit"]:hover {
+    background-color: purple;
+    transform: scale(1.2);
+}
+input[type="submit"]:active {
+    background-color: #441bd6;
+    transform: scale(1);
+}

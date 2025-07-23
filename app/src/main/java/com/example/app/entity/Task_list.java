@@ -1,6 +1,11 @@
 package com.example.app.entity;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -11,11 +16,12 @@ import lombok.Data;
 @Table(name = "task_items")
 public class Task_list {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String expiration_date;
-    private String task_item;
-    private Short is_completed;
-    private Short is_deleted;
-    private String create_date_time;
-    private String update_date_time;
+    private LocalDate expirationDate;
+    private String taskItem;
+    private Short isCompleted;
+    private Short isDeleted;
+    private LocalDateTime createDateTime;
+    private LocalDateTime updateDateTime;
 }

@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <div th:each="task : ${tasks}">
-
-        <p th:text="${task.id}"></p>
-        <p th:text="${task.expiration_date}"></p>
-        <p th:text="${task.task_item}"></p>
-        <p th:text="${task.is_completed}"></p>
-        <p th:text="${task.is_deleted}"></p>
-        <p th:text="${task.create_date_time}"></p>
-        <p th:text="${task.update_date_time}"></p>
+    <div class="contents">
+        <h1>ToDoリスト</h1>
+        <form action="/add" method="post" class="addform">
+            <input type="date" name="date" id="">
+            <input type="text" name="task_item" id="" placeholder="タスクを入力" required>
+            <input type="submit" value="追加">
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>期限日</th>
+                    <th>項目</th>
+                    <th>未完了</th>
+                    <th>完了</th>
+                    <th>削除</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="task : ${tasks}">
+                    <td th:class="${task.isCompleted == 1} ? 'line' : ''" th:text="${task.expirationDate}"></td>
+                    <td th:class="${task.isCompleted == 1} ? 'line' : ''" th:text="${task.taskItem}"></td>
+                    <form action="/update" method="post">
+        
+                        <td><input type="radio" name="process" value="not" th:checked="${task.isCompleted == 0 and task.isDeleted == 0}"></td>
+                        <td><input type="radio" name="process" value="complete" th:checked="${task.isCompleted == 1}"></td>
+                        <td><input type="radio" name="process" value="delete" th:checked="${task.isDeleted == 1}"></td>
+                        <td>
+                            <input type="hidden" name="id" th:value="${task.id}">
+                            <input type="submit" value="実行">
+                        </td>
+                    </form>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
